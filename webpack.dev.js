@@ -6,6 +6,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
+	output:{
+		libraryTarget: 'var',
+		library: 'Client'
+	},
     devtool: 'source-map',
     stats: 'verbose',
     module: {
@@ -16,7 +20,7 @@ module.exports = {
                 loader: "babel-loader"
             },
 			{
-				test: /\.sass$/,
+				test: /\.scss$/,
 				use: ['style-loader','css-loader','sass-loader']
 				
 			}
